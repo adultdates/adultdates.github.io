@@ -86,7 +86,7 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" id="og-url" content="https://adultdates.github.io/?lang=de">
+    <meta property="og:url" id="og-url" content="https://adultdates.net/?lang=de">
     <meta property="og:title" id="og-title" content="Heiße Dates heute finden | C-Date Partner">
     <meta property="og:description" id="og-description" content="Kostenlose Anmeldung bei C-Date - Finde echte Frauen in deiner Nähe">
     <meta property="og:image" id="og-image" content="https://static.tildacdn.ink/tild3930-6566-4838-a662-653336353531/437659768_1221373418.jpg">
@@ -106,10 +106,10 @@
         "@type": "WebSite",
         "name": "C-Date Partner",
         "description": "Offizieller Partner von C-Date - Finde noch heute Dates in deiner Nähe",
-        "url": "https://adultdates.github.io/?lang=de",
+        "url": "https://adultdates.net/?lang=de",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://adultdates.github.io/?lang=de&s={search_term_string}",
+            "target": "https://adultdates.net/?lang=de&s={search_term_string}",
             "query-input": "required name=search_term_string"
         },
         "sameAs": [
@@ -120,20 +120,20 @@
     </script>
     
     <!-- Canonical URL (dynamic) -->
-    <link rel="canonical" href="https://adultdates.github.io/?lang=de">
+    <link rel="canonical" href="https://adultdates.net/?lang=de">
     
     <!-- Hreflang for all languages (English removed) -->
-    <link rel="alternate" hreflang="de" href="https://adultdates.github.io/?lang=de">
-    <link rel="alternate" hreflang="fr" href="https://adultdates.github.io/?lang=fr">
-    <link rel="alternate" hreflang="it" href="https://adultdates.github.io/?lang=it">
-    <link rel="alternate" hreflang="es" href="https://adultdates.github.io/?lang=es">
-    <link rel="alternate" hreflang="nl" href="https://adultdates.github.io/?lang=nl">
-    <link rel="alternate" hreflang="pt" href="https://adultdates.github.io/?lang=pt">
-    <link rel="alternate" hreflang="no" href="https://adultdates.github.io/?lang=no">
-    <link rel="alternate" hreflang="da" href="https://adultdates.github.io/?lang=da">
-    <link rel="alternate" hreflang="pl" href="https://adultdates.github.io/?lang=pl">
-    <link rel="alternate" hreflang="sv" href="https://adultdates.github.io/?lang=sv">
-    <link rel="alternate" hreflang="x-default" href="https://adultdates.github.io/?lang=de">
+    <link rel="alternate" hreflang="de" href="https://adultdates.net/?lang=de">
+    <link rel="alternate" hreflang="fr" href="https://adultdates.net/?lang=fr">
+    <link rel="alternate" hreflang="it" href="https://adultdates.net/?lang=it">
+    <link rel="alternate" hreflang="es" href="https://adultdates.net/?lang=es">
+    <link rel="alternate" hreflang="nl" href="https://adultdates.net/?lang=nl">
+    <link rel="alternate" hreflang="pt" href="https://adultdates.net/?lang=pt">
+    <link rel="alternate" hreflang="no" href="https://adultdates.net/?lang=no">
+    <link rel="alternate" hreflang="da" href="https://adultdates.net/?lang=da">
+    <link rel="alternate" hreflang="pl" href="https://adultdates.net/?lang=pl">
+    <link rel="alternate" hreflang="sv" href="https://adultdates.net/?lang=sv">
+    <link rel="alternate" hreflang="x-default" href="https://adultdates.net/?lang=de">
     
     <!-- Tracking script -->
     <script>
@@ -1330,7 +1330,7 @@
                 'og-description': lang.content.description,
                 'twitter-title': lang.content.title,
                 'twitter-description': lang.content.description,
-                'og-url': `https://adultdates.github.io/?lang=${langCode}`
+                'og-url': `https://adultdates.net/?lang=${langCode}`
             };
             
             Object.keys(metaElements).forEach(id => {
@@ -1384,7 +1384,7 @@
             // Update canonical URL
             const canonical = document.querySelector('link[rel="canonical"]');
             if (canonical) {
-                canonical.href = `https://adultdates.github.io/?lang=${langCode}`;
+                canonical.href = `https://adultdates.net/?lang=${langCode}`;
             }
 
             // Update JSON-LD
@@ -1392,9 +1392,9 @@
             if (jsonLd) {
                 try {
                     let data = JSON.parse(jsonLd.textContent);
-                    data.url = `https://adultdates.github.io/?lang=${langCode}`;
+                    data.url = `https://adultdates.net/?lang=${langCode}`;
                     if (data.potentialAction && data.potentialAction.target) {
-                        data.potentialAction.target = `https://adultdates.github.io/?lang=${langCode}&s={search_term_string}`;
+                        data.potentialAction.target = `https://adultdates.net/?lang=${langCode}&s={search_term_string}`;
                     }
                     jsonLd.textContent = JSON.stringify(data, null, 2);
                 } catch (e) {
