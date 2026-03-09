@@ -43,16 +43,17 @@
         
         var currentLang = 'de'; // default
         if (langParam && supportedLangs.includes(langParam)) {
+            // Special case: if the URL has lang=de, we need to redirect to the main page later.
+            // We'll handle this in the main init function, not here.
             currentLang = langParam;
         } else if (supportedLangs.includes(browserLangNormalized)) {
             currentLang = browserLangNormalized;
         }
 
-        // Set document title
+        // Set document title and meta tags immediately
         if (langData[currentLang]) {
             document.title = langData[currentLang].title;
 
-            // Update meta tags
             var metaDesc = document.querySelector('meta[name="description"]');
             if (metaDesc) metaDesc.setAttribute('content', langData[currentLang].description);
 
@@ -86,7 +87,7 @@
     
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:url" id="og-url" content="https://adultdates.net/?lang=de">
+    <meta property="og:url" id="og-url" content="https://adultdates.net/">
     <meta property="og:title" id="og-title" content="Heiße Dates heute finden | C-Date Partner">
     <meta property="og:description" id="og-description" content="Kostenlose Anmeldung bei C-Date - Finde echte Frauen in deiner Nähe">
     <meta property="og:image" id="og-image" content="https://static.tildacdn.ink/tild3930-6566-4838-a662-653336353531/437659768_1221373418.jpg">
@@ -99,17 +100,17 @@
     <meta name="twitter:title" id="twitter-title" content="Heiße Dates heute finden | C-Date Partner">
     <meta name="twitter:description" id="twitter-description" content="Kostenlose Anmeldung bei C-Date - Finde echte Frauen">
     
-    <!-- Structured data (enhanced) -->
+    <!-- Structured data (enhanced) - now defaults to main URL -->
     <script type="application/ld+json" id="json-ld-data">
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "C-Date Partner",
         "description": "Offizieller Partner von C-Date - Finde noch heute Dates in deiner Nähe",
-        "url": "https://adultdates.net/?lang=de",
+        "url": "https://adultdates.net/",
         "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://adultdates.net/?lang=de&s={search_term_string}",
+            "target": "https://adultdates.net/?s={search_term_string}",
             "query-input": "required name=search_term_string"
         },
         "sameAs": [
@@ -119,11 +120,11 @@
     }
     </script>
     
-    <!-- Canonical URL (dynamic) -->
-    <link rel="canonical" href="https://adultdates.net/?lang=de">
+    <!-- Canonical URL - now defaults to main URL -->
+    <link rel="canonical" href="https://adultdates.net/">
     
     <!-- Hreflang for all languages (English removed) -->
-    <link rel="alternate" hreflang="de" href="https://adultdates.net/?lang=de">
+    <link rel="alternate" hreflang="de" href="https://adultdates.net/">
     <link rel="alternate" hreflang="fr" href="https://adultdates.net/?lang=fr">
     <link rel="alternate" hreflang="it" href="https://adultdates.net/?lang=it">
     <link rel="alternate" hreflang="es" href="https://adultdates.net/?lang=es">
@@ -133,7 +134,7 @@
     <link rel="alternate" hreflang="da" href="https://adultdates.net/?lang=da">
     <link rel="alternate" hreflang="pl" href="https://adultdates.net/?lang=pl">
     <link rel="alternate" hreflang="sv" href="https://adultdates.net/?lang=sv">
-    <link rel="alternate" hreflang="x-default" href="https://adultdates.net/?lang=de">
+    <link rel="alternate" hreflang="x-default" href="https://adultdates.net/">
     
     <!-- Tracking script -->
     <script>
@@ -1108,7 +1109,7 @@
             'pl': ['Warszawa', 'Kraków', 'Łódź', 'Wrocław', 'Poznań', 'Gdańsk', 'Szczecin', 'Bydgoszcz', 'Lublin', 'Katowice']
         };
 
-        // Helper functions (unchanged, but keep them as they were in the original)
+        // Helper functions
         function getRandomBadgeText() {
             const lang = languages[currentLang];
             if (!lang || !lang.badges) {
@@ -1202,6 +1203,12 @@
                 
                 const browserLangNormalized = (browserLang === 'nb' || browserLang === 'nn') ? 'no' : browserLang;
                 
+                // Special case: if the URL has lang=de, redirect to the main page without parameters
+                if (langParam === 'de') {
+                    window.location.replace('https://adultdates.net/');
+                    return;
+                }
+                
                 if (langParam && languages[langParam]) {
                     currentLang = langParam;
                     trackEvent('language_from_url', { lang: langParam });
@@ -1294,6 +1301,12 @@
         function changeLanguage(langCode) {
             if (!languages[langCode]) return;
             
+            // Special case: for German, redirect to the main page without parameters
+            if (langCode === 'de') {
+                window.location.href = 'https://adultdates.net/';
+                return;
+            }
+            
             currentLang = langCode;
             
             const url = new URL(window.location);
@@ -1329,9 +1342,14 @@
                 'og-title': lang.content.title,
                 'og-description': lang.content.description,
                 'twitter-title': lang.content.title,
-                'twitter-description': lang.content.description,
-                'og-url': `https://adultdates.net/?lang=${langCode}`
+                'twitter-description': lang.content.description
             };
+            
+            // For Open Graph URL, use main URL for German, parameter for others
+            const ogUrlElement = document.getElementById('og-url');
+            if (ogUrlElement) {
+                ogUrlElement.setAttribute('content', langCode === 'de' ? 'https://adultdates.net/' : `https://adultdates.net/?lang=${langCode}`);
+            }
             
             Object.keys(metaElements).forEach(id => {
                 const element = document.getElementById(id);
@@ -1381,10 +1399,10 @@
                 }
             });
             
-            // Update canonical URL
+            // Update canonical URL: main URL for German, parameter for others
             const canonical = document.querySelector('link[rel="canonical"]');
             if (canonical) {
-                canonical.href = `https://adultdates.net/?lang=${langCode}`;
+                canonical.href = langCode === 'de' ? 'https://adultdates.net/' : `https://adultdates.net/?lang=${langCode}`;
             }
 
             // Update JSON-LD
@@ -1392,9 +1410,16 @@
             if (jsonLd) {
                 try {
                     let data = JSON.parse(jsonLd.textContent);
-                    data.url = `https://adultdates.net/?lang=${langCode}`;
-                    if (data.potentialAction && data.potentialAction.target) {
-                        data.potentialAction.target = `https://adultdates.net/?lang=${langCode}&s={search_term_string}`;
+                    if (langCode === 'de') {
+                        data.url = 'https://adultdates.net/';
+                        if (data.potentialAction && data.potentialAction.target) {
+                            data.potentialAction.target = 'https://adultdates.net/?s={search_term_string}';
+                        }
+                    } else {
+                        data.url = `https://adultdates.net/?lang=${langCode}`;
+                        if (data.potentialAction && data.potentialAction.target) {
+                            data.potentialAction.target = `https://adultdates.net/?lang=${langCode}&s={search_term_string}`;
+                        }
                     }
                     jsonLd.textContent = JSON.stringify(data, null, 2);
                 } catch (e) {
@@ -1402,13 +1427,17 @@
                 }
             }
 
-            // Update footer links to include language parameter
+            // Update footer links to include language parameter (never for German)
             const footerLinkIds = ['footer-privacy', 'footer-terms', 'footer-cookie', 'footer-contact'];
             footerLinkIds.forEach(id => {
                 const link = document.getElementById(id);
                 if (link) {
                     const baseHref = link.getAttribute('href').split('?')[0];
-                    link.href = `${baseHref}?lang=${langCode}`;
+                    if (langCode === 'de') {
+                        link.href = baseHref;
+                    } else {
+                        link.href = `${baseHref}?lang=${langCode}`;
+                    }
                 }
             });
 
