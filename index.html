@@ -4,23 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://static.tildacdn.ink" crossorigin>
     
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔥</text></svg>">
     
-    <!-- Mobile meta tags -->
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
-    <!-- ========== EARLY LANGUAGE SETUP FOR SEO ========== -->
-    <!-- This script runs immediately to set meta tags based on URL lang parameter -->
     <script>
     (function() {
-        // Language data (minimal for early setup)
         var langData = {
             'de': { title: 'Heiße Dates heute finden | C-Date Partner', description: 'Kostenlose Anmeldung bei C-Date - Finde echte Frauen in deiner Nähe für unverbindliche Abenteuer. Verifizierte Profile, 100% diskret.', keywords: 'Sex Dating, One Night Stand, Frauen kennenlernen, diskrete Treffen, Casual Dating, heute noch Date finden, C-Date, Partnervermittlung, Erotik Kontakte, Affäre, F+, unverbindliche Abenteuer' },
             'sv': { title: 'Heta träffar idag | C-Date Partner', description: 'Gratis registrering på C-Date - Hitta riktiga kvinnor i närheten för tillfälliga möten. Verifierade profiler, 100% diskret.', keywords: 'Sex dejting, one night stand, träffa kvinnor, diskreta möten, casual dejting, hitta dejt idag, C-Date, partnerförmedling, erotiska kontakter, ragga, raggningssajt' },
@@ -34,23 +28,19 @@
             'pl': { title: 'Znajdź gorące randki już dziś | Partner C-Date', description: 'Darmowa rejestracja w C-Date - Znajdź prawdziwe kobiety w pobliżu na nieobowiązkowe przygody. Zweryfikowane profile, 100% dyskretnie.', keywords: 'Seks randki, przygoda na jedną noc, kobiety w pobliżu, dyskretne spotkania, casual dating, znajdź randkę, C-Date, partner, kontakty erotyczne, sex znajomości' }
         };
 
-        // Get lang from URL
         var urlParams = new URLSearchParams(window.location.search);
         var langParam = urlParams.get('lang');
         var supportedLangs = Object.keys(langData);
         var browserLang = navigator.language.split('-')[0];
         var browserLangNormalized = (browserLang === 'nb' || browserLang === 'nn') ? 'no' : browserLang;
         
-        var currentLang = 'de'; // default
+        var currentLang = 'de';
         if (langParam && supportedLangs.includes(langParam)) {
-            // Special case: if the URL has lang=de, we need to redirect to the main page later.
-            // We'll handle this in the main init function, not here.
             currentLang = langParam;
         } else if (supportedLangs.includes(browserLangNormalized)) {
             currentLang = browserLangNormalized;
         }
 
-        // Set document title and meta tags immediately
         if (langData[currentLang]) {
             document.title = langData[currentLang].title;
 
@@ -72,20 +62,25 @@
             var twitterDesc = document.querySelector('meta[name="twitter:description"]');
             if (twitterDesc) twitterDesc.setAttribute('content', langData[currentLang].description);
 
-            // Set HTML lang attribute
             document.documentElement.lang = currentLang;
+            
+            var canonicalLink = document.getElementById('canonical-link');
+            if (canonicalLink) {
+                if (currentLang === 'de') {
+                    canonicalLink.href = 'https://adultdates.net/';
+                } else {
+                    canonicalLink.href = 'https://adultdates.net/?lang=' + currentLang;
+                }
+            }
         }
     })();
     </script>
-    <!-- ========== END EARLY LANGUAGE SETUP ========== -->
 
-    <!-- SEO meta tags (will be overwritten by early script) -->
     <title id="page-title">Heiße Dates heute finden | C-Date Partner</title>
     <meta id="meta-description" name="description" content="Kostenlose Anmeldung bei C-Date - Finde echte Frauen in deiner Nähe für unverbindliche Abenteuer. Verifizierte Profile, 100% diskret.">
     <meta id="meta-keywords" name="keywords" content="Sex Dating, One Night Stand, Frauen kennenlernen, diskrete Treffen, Casual Dating, heute noch Date finden, C-Date, Partnervermittlung, Erotik Kontakte, Affäre, F+, unverbindliche Abenteuer">
     <meta name="robots" content="index, follow">
     
-    <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:url" id="og-url" content="https://adultdates.net/">
     <meta property="og:title" id="og-title" content="Heiße Dates heute finden | C-Date Partner">
@@ -95,12 +90,10 @@
     <meta property="og:image:height" content="630">
     <meta property="og:locale" content="de_DE">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" id="twitter-title" content="Heiße Dates heute finden | C-Date Partner">
     <meta name="twitter:description" id="twitter-description" content="Kostenlose Anmeldung bei C-Date - Finde echte Frauen">
     
-    <!-- Structured data (enhanced) - now defaults to main URL -->
     <script type="application/ld+json" id="json-ld-data">
     {
         "@context": "https://schema.org",
@@ -120,10 +113,8 @@
     }
     </script>
     
-    <!-- Canonical URL - now defaults to main URL -->
-    <link rel="canonical" href="https://adultdates.net/">
+    <link rel="canonical" id="canonical-link" href="https://adultdates.net/">
     
-    <!-- Hreflang for all languages (English removed) -->
     <link rel="alternate" hreflang="de" href="https://adultdates.net/">
     <link rel="alternate" hreflang="fr" href="https://adultdates.net/?lang=fr">
     <link rel="alternate" hreflang="it" href="https://adultdates.net/?lang=it">
@@ -136,7 +127,6 @@
     <link rel="alternate" hreflang="sv" href="https://adultdates.net/?lang=sv">
     <link rel="alternate" hreflang="x-default" href="https://adultdates.net/">
     
-    <!-- Tracking script -->
     <script>
     (function() {
         function saveToStorage(key, value) {
@@ -171,7 +161,6 @@
     </script>
     
     <style>
-        /* CSS Reset & Base Styles - Mobile First Approach */
         * {
             margin: 0;
             padding: 0;
@@ -746,7 +735,6 @@
     </footer>
 
     <script>
-        // Language configuration with unique keywords for each language (full version)
         const languages = {
             'de': {
                 code: 'de', name: 'Deutsch', shortName: 'DE',
@@ -1062,7 +1050,6 @@
 
         let currentLang = 'de';
 
-        // All image URLs (full list from original)
         const allImages = [
             "https://static.tildacdn.ink/tild3930-6566-4838-a662-653336353531/437659768_1221373418.jpg",
             "https://static.tildacdn.ink/tild3163-3361-4565-b064-613535623538/437516504_1221379354.jpg",
@@ -1095,7 +1082,6 @@
             "https://static.tildacdn.ink/tild3263-6333-4631-a362-363236343538/434843396_1221358241.jpg"
         ];
 
-        // Location lists for each language (full)
         const locationLists = {
             'de': ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt', 'Stuttgart', 'Düsseldorf', 'Dortmund', 'Essen', 'Leipzig'],
             'sv': ['Stockholm', 'Göteborg', 'Malmö', 'Uppsala', 'Linköping', 'Örebro', 'Västerås', 'Helsingborg', 'Jönköping', 'Norrköping'],
@@ -1109,7 +1095,6 @@
             'pl': ['Warszawa', 'Kraków', 'Łódź', 'Wrocław', 'Poznań', 'Gdańsk', 'Szczecin', 'Bydgoszcz', 'Lublin', 'Katowice']
         };
 
-        // Helper functions
         function getRandomBadgeText() {
             const lang = languages[currentLang];
             if (!lang || !lang.badges) {
@@ -1203,12 +1188,6 @@
                 
                 const browserLangNormalized = (browserLang === 'nb' || browserLang === 'nn') ? 'no' : browserLang;
                 
-                // Special case: if the URL has lang=de, redirect to the main page without parameters
-                if (langParam === 'de') {
-                    window.location.replace('https://adultdates.net/');
-                    return;
-                }
-                
                 if (langParam && languages[langParam]) {
                     currentLang = langParam;
                     trackEvent('language_from_url', { lang: langParam });
@@ -1301,12 +1280,6 @@
         function changeLanguage(langCode) {
             if (!languages[langCode]) return;
             
-            // Special case: for German, redirect to the main page without parameters
-            if (langCode === 'de') {
-                window.location.href = 'https://adultdates.net/';
-                return;
-            }
-            
             currentLang = langCode;
             
             const url = new URL(window.location);
@@ -1315,7 +1288,7 @@
             
             updateContent(langCode);
             updateLanguageDisplay();
-            initLanguageSystem(); // refresh dropdown
+            initLanguageSystem();
             initHeroGallery();
             initMainGallery();
             updateAllBadges();
@@ -1334,7 +1307,6 @@
             const lang = languages[langCode];
             if (!lang) return;
             
-            // Update meta tags including keywords
             const metaElements = {
                 'page-title': lang.content.title,
                 'meta-description': lang.content.description,
@@ -1345,7 +1317,6 @@
                 'twitter-description': lang.content.description
             };
             
-            // For Open Graph URL, use main URL for German, parameter for others
             const ogUrlElement = document.getElementById('og-url');
             if (ogUrlElement) {
                 ogUrlElement.setAttribute('content', langCode === 'de' ? 'https://adultdates.net/' : `https://adultdates.net/?lang=${langCode}`);
@@ -1362,7 +1333,6 @@
                 }
             });
             
-            // Update visible content
             const contentElements = {
                 'hero-title': lang.content.heroTitle,
                 'hero-subtitle': lang.content.heroSubtitle,
@@ -1399,13 +1369,15 @@
                 }
             });
             
-            // Update canonical URL: main URL for German, parameter for others
             const canonical = document.querySelector('link[rel="canonical"]');
             if (canonical) {
-                canonical.href = langCode === 'de' ? 'https://adultdates.net/' : `https://adultdates.net/?lang=${langCode}`;
+                if (langCode === 'de') {
+                    canonical.href = 'https://adultdates.net/';
+                } else {
+                    canonical.href = `https://adultdates.net/?lang=${langCode}`;
+                }
             }
 
-            // Update JSON-LD
             const jsonLd = document.getElementById('json-ld-data');
             if (jsonLd) {
                 try {
@@ -1426,20 +1398,6 @@
                     console.warn('JSON-LD update failed:', e);
                 }
             }
-
-            // Update footer links to include language parameter (never for German)
-            const footerLinkIds = ['footer-privacy', 'footer-terms', 'footer-cookie', 'footer-contact'];
-            footerLinkIds.forEach(id => {
-                const link = document.getElementById(id);
-                if (link) {
-                    const baseHref = link.getAttribute('href').split('?')[0];
-                    if (langCode === 'de') {
-                        link.href = baseHref;
-                    } else {
-                        link.href = `${baseHref}?lang=${langCode}`;
-                    }
-                }
-            });
 
             document.documentElement.lang = langCode;
         }
