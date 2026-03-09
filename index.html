@@ -628,6 +628,53 @@
             padding: 0 20px;
         }
         
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .how-it-works {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .how-it-works h3 {
+            color: white;
+            font-size: 22px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .how-it-works ol {
+            color: white;
+            list-style-position: inside;
+            padding: 0;
+        }
+        
+        .how-it-works li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .platform-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        
         @media (max-width: 767px) {
             .hero-title { font-size: 28px; padding: 0 10px; }
             .cta-button { padding: 20px 30px; font-size: 20px; min-width: 90%; }
@@ -677,6 +724,10 @@
                 <div class="hero-subtitle" id="hero-subtitle">Verifizierte Frauen in deiner Nähe warten auf dich</div>
                 <div class="hero-badge" id="hero-badge">⚡ KOSTENLOSE ANMELDUNG</div>
                 
+                <div class="platform-description" id="platform-description">
+                    C-Date ist die führende internationale Plattform für diskrete Bekanntschaften, die seit 2008 in ganz Europa aktiv ist. Täglich registrieren sich tausende neue Mitglieder, und jedes Profil wird vor Freischaltung von unserem Team manuell verifiziert. Wir arbeiten ohne Bots – bei uns treffen Sie ausschließlich auf echte Menschen, die unkomplizierte Kontakte suchen.
+                </div>
+                
                 <div class="main-cta">
                     <button class="cta-button" id="main-cta-button">JETZT KOSTENLOS ANMELDEN →</button>
                     <div class="cta-note" id="cta-note">Keine Kreditkarte nötig • In 2 Minuten starten • 100% diskret</div>
@@ -690,6 +741,16 @@
                         <div class="benefit-item"><span class="benefit-icon">⚡</span><div class="benefit-text" id="benefit3">Sofortige Kontakte</div></div>
                         <div class="benefit-item"><span class="benefit-icon">🔒</span><div class="benefit-text" id="benefit4">100% diskret & sicher</div></div>
                     </div>
+                </div>
+                
+                <div class="how-it-works" id="how-it-works">
+                    <h3>So einfach funktioniert es:</h3>
+                    <ol>
+                        <li><strong>Profil erstellen</strong> – Die Anmeldung dauert weniger als 2 Minuten</li>
+                        <li><strong>Profile entdecken</strong> – Stöbern Sie durch tausende verifizierte Frauen in Ihrer Stadt</li>
+                        <li><strong>Nachricht schreiben</strong> – Kontaktieren Sie die Mitglieder, die Sie interessieren</li>
+                        <li><strong>Treffen vereinbaren</strong> – Verabreden Sie sich zu einem unverbindlichen Date</li>
+                    </ol>
                 </div>
             </div>
         </section>
@@ -728,6 +789,9 @@
 
     <footer class="footer">
         <div class="container">
+            <div class="footer-text" id="footer-security">
+                Alle Daten werden durch moderne Verschlüsselungstechnologie geschützt. Ihre persönlichen Informationen werden vertraulich behandelt und nicht an Dritte weitergegeben. Sie entscheiden selbst, wem Sie Ihre Kontaktdaten freigeben.
+            </div>
             <div class="footer-disclaimer" id="footer-disclaimer">
                 Offizieller Partner von C-Date. Dieser Service leitet Sie zur offiziellen C-Date Plattform weiter. Nur für Erwachsene ab 18 Jahren. Bitte nutzen Sie verantwortungsvoll.<br><br>© 2024 C-Date Partner. Alle Rechte vorbehalten.
             </div>
@@ -764,7 +828,14 @@
                     timer: '🕒 Angebot gilt heute noch',
                     finalCtaButton: '🔥 JETZT SOFORT STARTEN',
                     finalNote: 'Kostenlose Anmeldung • Kein Abo nötig • Jederzeit kündbar',
-                    footerDisclaimer: 'Offizieller Partner von C-Date. Dieser Service leitet Sie zur offiziellen C-Date Plattform weiter. Nur für Erwachsene ab 18 Jahren. Bitte nutzen Sie verantwortungsvoll.<br><br>© 2024 C-Date Partner. Alle Rechte vorbehalten.'
+                    footerDisclaimer: 'Offizieller Partner von C-Date. Dieser Service leitet Sie zur offiziellen C-Date Plattform weiter. Nur für Erwachsene ab 18 Jahren. Bitte nutzen Sie verantwortungsvoll.<br><br>© 2024 C-Date Partner. Alle Rechte vorbehalten.',
+                    platformDescription: 'C-Date ist die führende internationale Plattform für diskrete Bekanntschaften, die seit 2008 in ganz Europa aktiv ist. Täglich registrieren sich tausende neue Mitglieder, und jedes Profil wird vor Freischaltung von unserem Team manuell verifiziert. Wir arbeiten ohne Bots – bei uns treffen Sie ausschließlich auf echte Menschen, die unkomplizierte Kontakte suchen.',
+                    howItWorks: 'So einfach funktioniert es:',
+                    howItWorksStep1: 'Profil erstellen – Die Anmeldung dauert weniger als 2 Minuten',
+                    howItWorksStep2: 'Profile entdecken – Stöbern Sie durch tausende verifizierte Frauen in Ihrer Stadt',
+                    howItWorksStep3: 'Nachricht schreiben – Kontaktieren Sie die Mitglieder, die Sie interessieren',
+                    howItWorksStep4: 'Treffen vereinbaren – Verabreden Sie sich zu einem unverbindlichen Date',
+                    footerSecurity: 'Alle Daten werden durch moderne Verschlüsselungstechnologie geschützt. Ihre persönlichen Informationen werden vertraulich behandelt und nicht an Dritte weitergegeben. Sie entscheiden selbst, wem Sie Ihre Kontaktdaten freigeben.'
                 }
             },
             'sv': {
@@ -795,7 +866,14 @@
                     timer: '🕒 Erbjudande gäller idag',
                     finalCtaButton: '🔥 STARTA NU',
                     finalNote: 'Gratis registrering • Ingen prenumeration krävs • Avbryt när som helst',
-                    footerDisclaimer: 'Officiell partner till C-Date. Denna tjänst omdirigerar dig till den officiella C-Date-plattformen. Endast för vuxna 18+. Använd ansvarsfullt.<br><br>© 2024 C-Date Partner. Alla rättigheter förbehållna.'
+                    footerDisclaimer: 'Officiell partner till C-Date. Denna tjänst omdirigerar dig till den officiella C-Date-plattformen. Endast för vuxna 18+. Använd ansvarsfullt.<br><br>© 2024 C-Date Partner. Alla rättigheter förbehållna.',
+                    platformDescription: 'C-Date är den ledande internationella plattformen för diskreta kontakter, aktiv i hela Europa sedan 2008. Tusentals nya medlemmar registrerar sig dagligen, och varje profil manuellt verifieras av vårt team innan den publiceras. Vi arbetar utan bots – här möter du bara verkliga människor som söker enkla möten.',
+                    howItWorks: 'Så enkelt fungerar det:',
+                    howItWorksStep1: 'Skapa profil – Registreringen tar mindre än 2 minuter',
+                    howItWorksStep2: 'Upptäck profiler – Bläddra bland tusentals verifierade kvinnor i din stad',
+                    howItWorksStep3: 'Skriv meddelande – Kontakta de medlemmar som intresserar dig',
+                    howItWorksStep4: 'Boka träff – Bestäm tid för ett o Förbindligt möte',
+                    footerSecurity: 'All data skyddas med modern krypteringsteknik. Dina personliga uppgifter behandlas konfidentiellt och delas inte med tredje part. Du bestämmer själv vem du vill dela dina kontaktuppgifter med.'
                 }
             },
             'fr': {
@@ -826,7 +904,14 @@
                     timer: '🕒 Offre valable encore aujourd\'hui',
                     finalCtaButton: '🔥 COMMENCER IMMÉDIATEMENT',
                     finalNote: 'Inscription gratuite • Pas d\'abonnement requis • Annulable à tout moment',
-                    footerDisclaimer: 'Partenaire officiel de C-Date. Ce service vous redirige vers la plateforme officielle de C-Date. Réservé aux adultes de plus de 18 ans. Veuillez utiliser de manière responsable.<br><br>© 2024 Partenaire C-Date. Tous droits réservés.'
+                    footerDisclaimer: 'Partenaire officiel de C-Date. Ce service vous redirige vers la plateforme officielle de C-Date. Réservé aux adultes de plus de 18 ans. Veuillez utiliser de manière responsable.<br><br>© 2024 Partenaire C-Date. Tous droits réservés.',
+                    platformDescription: 'C-Date est la principale plateforme internationale de rencontres discrètes, active dans toute l\'Europe depuis 2008. Des milliers de nouveaux membres s\'inscrivent chaque jour, et chaque profil est manuellement vérifié par notre équipe avant publication. Nous travaillons sans bots – vous rencontrez uniquement des personnes réelles cherchant des relations sans lendemain.',
+                    howItWorks: 'Comment ça marche :',
+                    howItWorksStep1: 'Créez votre profil – L\'inscription prend moins de 2 minutes',
+                    howItWorksStep2: 'Découvrez des profils – Parcourez des milliers de femmes vérifiées dans votre ville',
+                    howItWorksStep3: 'Envoyez un message – Contactez les membres qui vous intéressent',
+                    howItWorksStep4: 'Planifiez une rencontre – Fixez un rendez-vous pour une rencontre sans engagement',
+                    footerSecurity: 'Toutes les données sont protégées par une technologie de cryptage moderne. Vos informations personnelles sont traitées confidentiellement et ne sont pas partagées avec des tiers. Vous décidez à qui vous révélez vos coordonnées.'
                 }
             },
             'it': {
@@ -857,7 +942,14 @@
                     timer: '🕒 Offerta valida ancora oggi',
                     finalCtaButton: '🔥 INIZIA SUBITO',
                     finalNote: 'Registrazione gratuita • Nessun abbonamento richiesto • Cancellabile in qualsiasi momento',
-                    footerDisclaimer: 'Partner ufficiale di C-Date. Questo servizio ti reindirizza alla piattaforma ufficiale di C-Date. Solo per adulti sopra i 18 anni. Si prega di utilizzare in modo responsabile.<br><br>© 2024 Partner C-Date. Tutti i diritti riservati.'
+                    footerDisclaimer: 'Partner ufficiale di C-Date. Questo servizio ti reindirizza alla piattaforma ufficiale di C-Date. Solo per adulti sopra i 18 anni. Si prega di utilizzare in modo responsabile.<br><br>© 2024 Partner C-Date. Tutti i diritti riservati.',
+                    platformDescription: 'C-Date è la principale piattaforma internazionale per incontri discreti, attiva in tutta Europa dal 2008. Migliaia di nuovi membri si registrano ogni giorno e ogni profilo viene verificato manualmente dal nostro team prima della pubblicazione. Lavoriamo senza bot – incontri solo persone reali che cercano avventure senza impegno.',
+                    howItWorks: 'Come funziona:',
+                    howItWorksStep1: 'Crea il tuo profilo – La registrazione richiede meno di 2 minuti',
+                    howItWorksStep2: 'Scopri i profili – Sfoglia migliaia di donne verificate nella tua città',
+                    howItWorksStep3: 'Scrivi un messaggio – Contatta i membri che ti interessano',
+                    howItWorksStep4: 'Organizza un incontro – Fissa un appuntamento per un incontro senza impegno',
+                    footerSecurity: 'Tutti i dati sono protetti da tecnologia di crittografia moderna. Le tue informazioni personali sono trattate in modo confidenziale e non vengono condivise con terze parti. Decidi tu a chi rivelare i tuoi recapiti.'
                 }
             },
             'es': {
@@ -888,7 +980,14 @@
                     timer: '🕒 Oferta válida hoy',
                     finalCtaButton: '🔥 COMENZAR AHORA',
                     finalNote: 'Registro gratuito • No se requiere suscripción • Cancelable en cualquier momento',
-                    footerDisclaimer: 'Socio oficial de C-Date. Este servicio le redirige a la plataforma oficial de C-Date. Solo para adultos mayores de 18 años. Por favor, utilice de manera responsable.<br><br>© 2024 Socio C-Date. Todos los derechos reservados.'
+                    footerDisclaimer: 'Socio oficial de C-Date. Este servicio le redirige a la plataforma oficial de C-Date. Solo para adultos mayores de 18 años. Por favor, utilice de manera responsable.<br><br>© 2024 Socio C-Date. Todos los derechos reservados.',
+                    platformDescription: 'C-Date es la plataforma internacional líder para citas discretas, activa en toda Europa desde 2008. Miles de nuevos miembros se registran diariamente, y cada perfil es verificado manualmente por nuestro equipo antes de su publicación. Trabajamos sin bots – conoces solo a personas reales que buscan relaciones sin compromiso.',
+                    howItWorks: 'Así de fácil funciona:',
+                    howItWorksStep1: 'Crea tu perfil – El registro toma menos de 2 minutos',
+                    howItWorksStep2: 'Descubre perfiles – Navega por miles de mujeres verificadas en tu ciudad',
+                    howItWorksStep3: 'Escribe un mensaje – Contacta a los miembros que te interesen',
+                    howItWorksStep4: 'Organiza una cita – Acuerda un encuentro sin compromiso',
+                    footerSecurity: 'Todos los datos están protegidos con tecnología de encriptación moderna. Tu información personal se trata de forma confidencial y no se comparte con terceros. Tú decides a quién revelar tus datos de contacto.'
                 }
             },
             'nl': {
@@ -919,7 +1018,14 @@
                     timer: '🕒 Aanbod geldig vandaag',
                     finalCtaButton: '🔥 START NU METEEN',
                     finalNote: 'Gratis aanmelding • Geen abonnement nodig • Altijd opzegbaar',
-                    footerDisclaimer: 'Officiële partner van C-Date. Deze service leidt u door naar het officiële C-Date platform. Alleen voor volwassenen ouder dan 18 jaar. Gebruik verantwoord.<br><br>© 2024 C-Date Partner. Alle rechten voorbehouden.'
+                    footerDisclaimer: 'Officiële partner van C-Date. Deze service leidt u door naar het officiële C-Date platform. Alleen voor volwassenen ouder dan 18 jaar. Gebruik verantwoord.<br><br>© 2024 C-Date Partner. Alle rechten voorbehouden.',
+                    platformDescription: 'C-Date is het toonaangevende internationale platform voor discrete ontmoetingen, actief in heel Europa sinds 2008. Dagelijks registreren duizenden nieuwe leden zich en elk profiel wordt handmatig geverifieerd door ons team voordat het wordt gepubliceerd. Wij werken zonder bots – u ontmoet alleen echte mensen die op zoek zijn naar ongedwongen contacten.',
+                    howItWorks: 'Zo eenvoudig werkt het:',
+                    howItWorksStep1: 'Maak uw profiel aan – De registratie duurt minder dan 2 minuten',
+                    howItWorksStep2: 'Ontdek profielen – Blader door duizenden geverifieerde vrouwen in uw stad',
+                    howItWorksStep3: 'Stuur een bericht – Neem contact op met leden die u interesseren',
+                    howItWorksStep4: 'Plan een ontmoeting – Spreek af voor een vrijblijvende date',
+                    footerSecurity: 'Alle gegevens worden beschermd door moderne encryptietechnologie. Uw persoonlijke informatie wordt vertrouwelijk behandeld en niet gedeeld met derden. U bepaalt zelf aan wie u uw contactgegevens vrijgeeft.'
                 }
             },
             'pt': {
@@ -950,7 +1056,14 @@
                     timer: '🕒 Oferta válida hoje',
                     finalCtaButton: '🔥 COMEÇAR AGORA',
                     finalNote: 'Registo gratuito • Sem subscrição necessária • Cancelável a qualquer momento',
-                    footerDisclaimer: 'Parceiro oficial da C-Date. Este serviço redireciona-o para a plataforma oficial da C-Date. Apenas para adultos com mais de 18 anos. Por favor, utilize de forma responsável.<br><br>© 2024 Parceiro C-Date. Todos os direitos reservados.'
+                    footerDisclaimer: 'Parceiro oficial da C-Date. Este serviço redireciona-o para a plataforma oficial da C-Date. Apenas para adultos com mais de 18 anos. Por favor, utilize de forma responsável.<br><br>© 2024 Parceiro C-Date. Todos os direitos reservados.',
+                    platformDescription: 'C-Date é a principal plataforma internacional para encontros discretos, ativa em toda a Europa desde 2008. Milhares de novos membros registam-se diariamente, e cada perfil é verificado manualmente pela nossa equipa antes da publicação. Trabalhamos sem bots – encontra apenas pessoas reais que procuram relacionamentos casuais.',
+                    howItWorks: 'Como funciona:',
+                    howItWorksStep1: 'Crie o seu perfil – O registo demora menos de 2 minutos',
+                    howItWorksStep2: 'Descubra perfis – Navegue por milhares de mulheres verificadas na sua cidade',
+                    howItWorksStep3: 'Envie uma mensagem – Contacte os membros que lhe interessam',
+                    howItWorksStep4: 'Marque um encontro – Combine uma reunião sem compromisso',
+                    footerSecurity: 'Todos os dados são protegidos por tecnologia de encriptação moderna. As suas informações pessoais são tratadas confidencialmente e não são partilhadas com terceiros. Você decide a quem revela os seus dados de contacto.'
                 }
             },
             'no': {
@@ -981,7 +1094,14 @@
                     timer: '🕒 Tilbud gjelder i dag',
                     finalCtaButton: '🔥 START NÅ',
                     finalNote: 'Gratis registrering • Ingen abonnement nødvendig • Kan avbrytes når som helst',
-                    footerDisclaimer: 'Offisiell partner av C-Date. Denne tjenesten omdirigerer deg til den offisielle C-Date-plattformen. Kun for voksne over 18 år. Vennligst bruk ansvarlig.<br><br>© 2024 C-Date Partner. Alle rettigheter forbeholdt.'
+                    footerDisclaimer: 'Offisiell partner av C-Date. Denne tjenesten omdirigerer deg til den offisielle C-Date-plattformen. Kun for voksne over 18 år. Vennligst bruk ansvarlig.<br><br>© 2024 C-Date Partner. Alle rettigheter forbeholdt.',
+                    platformDescription: 'C-Date er den ledende internasjonale plattformen for diskrete møter, aktiv i hele Europa siden 2008. Tusenvis av nye medlemmer registrerer seg daglig, og hver profil blir manuelt verifisert av teamet vårt før publisering. Vi jobber uten bots – du møter kun ekte mennesker som søker uforpliktende kontakter.',
+                    howItWorks: 'Så enkelt fungerer det:',
+                    howItWorksStep1: 'Opprett profilen din – Registreringen tar mindre enn 2 minutter',
+                    howItWorksStep2: 'Oppdag profiler – Bla gjennom tusenvis av verifiserte kvinner i byen din',
+                    howItWorksStep3: 'Send en melding – Kontakt medlemmene som interesserer deg',
+                    howItWorksStep4: 'Avtal et møte – Bestem dere for en uforpliktende date',
+                    footerSecurity: 'Alle data beskyttes med moderne krypteringsteknologi. Din personlige informasjon behandles konfidensielt og deles ikke med tredjeparter. Du bestemmer selv hvem du vil dele kontaktinformasjonen din med.'
                 }
             },
             'da': {
@@ -1012,7 +1132,14 @@
                     timer: '🕒 Tilbud gælder i dag',
                     finalCtaButton: '🔥 START NU',
                     finalNote: 'Gratis registrering • Intet abonnement nødvendigt • Kan opsiges når som helst',
-                    footerDisclaimer: 'Officiel partner af C-Date. Denne service omdirigerer dig til den officielle C-Date-platform. Kun for voksne over 18 år. Brug venligst ansvarligt.<br><br>© 2024 C-Date Partner. Alle rettigheder forbeholdes.'
+                    footerDisclaimer: 'Officiel partner af C-Date. Denne service omdirigerer dig til den officielle C-Date-platform. Kun for voksne over 18 år. Brug venligst ansvarligt.<br><br>© 2024 C-Date Partner. Alle rettigheder forbeholdes.',
+                    platformDescription: 'C-Date er den førende internationale platform for diskrete møder, aktiv i hele Europa siden 2008. Tusindvis af nye medlemmer registrerer sig dagligt, og hver profil bliver manuelt verificeret af vores team før offentliggørelse. Vi arbejder uden bots – du møder kun rigtige mennesker, der søger uforpligtende kontakter.',
+                    howItWorks: 'Så nemt fungerer det:',
+                    howItWorksStep1: 'Opret din profil – Registreringen tager mindre end 2 minutter',
+                    howItWorksStep2: 'Opdag profiler – Gennemse tusindvis af verificerede kvinder i din by',
+                    howItWorksStep3: 'Send en besked – Kontakt de medlemmer, der interesserer dig',
+                    howItWorksStep4: 'Aftal et møde – Planlæg en uforpligtende date',
+                    footerSecurity: 'Alle data beskyttes med moderne krypteringsteknologi. Dine personlige oplysninger behandles fortroligt og deles ikke med tredjeparter. Du bestemmer selv, hvem du vil dele dine kontaktoplysninger med.'
                 }
             },
             'pl': {
@@ -1043,7 +1170,14 @@
                     timer: '🕒 Oferta ważna dziś',
                     finalCtaButton: '🔥 ZACZNIJ TERAZ',
                     finalNote: 'Darmowa rejestracja • Brak wymaganego abonamentu • Anulowalne w każdej chwili',
-                    footerDisclaimer: 'Oficjalny partner C-Date. Ta usługa przekierowuje Cię do oficjalnej platformy C-Date. Tylko dla dorosłych powyżej 18 roku życia. Proszę używać odpowiedzialnie.<br><br>© 2024 Partner C-Date. Wszelkie prawa zastrzeżone.'
+                    footerDisclaimer: 'Oficjalny partner C-Date. Ta usługa przekierowuje Cię do oficjalnej platformy C-Date. Tylko dla dorosłych powyżej 18 roku życia. Proszę używać odpowiedzialnie.<br><br>© 2024 Partner C-Date. Wszelkie prawa zastrzeżone.',
+                    platformDescription: 'C-Date to wiodąca międzynarodowa platforma do dyskretnych znajomości, działająca w całej Europie od 2008 roku. Tysiące nowych członków rejestruje się codziennie, a każdy profil jest ręcznie weryfikowany przez nasz zespół przed publikacją. Działamy bez botów – poznajesz tylko prawdziwych ludzi szukających przygód bez zobowiązań.',
+                    howItWorks: 'Jak to działa:',
+                    howItWorksStep1: 'Utwórz profil – Rejestracja zajmuje mniej niż 2 minuty',
+                    howItWorksStep2: 'Odkrywaj profile – Przeglądaj tysiące zweryfikowanych kobiet w Twoim mieście',
+                    howItWorksStep3: 'Wyślij wiadomość – Skontaktuj się z członkami, którzy Cię interesują',
+                    howItWorksStep4: 'Umów się na spotkanie – Zaplanuj randkę bez zobowiązań',
+                    footerSecurity: 'Wszystkie dane są chronione nowoczesną technologią szyfrowania. Twoje dane osobowe są traktowane poufnie i nie są udostępniane osobom trzecim. Sam decydujesz, komu udostępniasz swoje dane kontaktowe.'
                 }
             }
         };
@@ -1355,7 +1489,9 @@
                 'timer': lang.content.timer,
                 'final-cta-button': lang.content.finalCtaButton,
                 'final-note': lang.content.finalNote,
-                'footer-disclaimer': lang.content.footerDisclaimer
+                'footer-disclaimer': lang.content.footerDisclaimer,
+                'platform-description': lang.content.platformDescription,
+                'footer-security': lang.content.footerSecurity
             };
             
             Object.keys(contentElements).forEach(id => {
@@ -1368,6 +1504,19 @@
                     }
                 }
             });
+            
+            const howItWorksTitle = document.querySelector('#how-it-works h3');
+            if (howItWorksTitle) {
+                howItWorksTitle.textContent = lang.content.howItWorks;
+            }
+            
+            const howItWorksSteps = document.querySelectorAll('#how-it-works ol li');
+            if (howItWorksSteps.length >= 4) {
+                howItWorksSteps[0].innerHTML = `<strong>${lang.content.howItWorksStep1.split('–')[0]}</strong> – ${lang.content.howItWorksStep1.split('–')[1]}`;
+                howItWorksSteps[1].innerHTML = `<strong>${lang.content.howItWorksStep2.split('–')[0]}</strong> – ${lang.content.howItWorksStep2.split('–')[1]}`;
+                howItWorksSteps[2].innerHTML = `<strong>${lang.content.howItWorksStep3.split('–')[0]}</strong> – ${lang.content.howItWorksStep3.split('–')[1]}`;
+                howItWorksSteps[3].innerHTML = `<strong>${lang.content.howItWorksStep4.split('–')[0]}</strong> – ${lang.content.howItWorksStep4.split('–')[1]}`;
+            }
             
             const canonical = document.querySelector('link[rel="canonical"]');
             if (canonical) {
